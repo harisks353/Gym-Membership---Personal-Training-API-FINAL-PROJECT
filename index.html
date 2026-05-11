@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elite Gym API - Haris Mohammed</title>
+  </head>
+  <body>
+    <h1>Elite Gym Management System</h1>
+    <p><strong>Developer:</strong> Haris Mohammed (Student ID: 70454)</p>
+    <hr />
+    <h3>Project Description</h3>
+    <p>
+      This is a FastAPI-based REST API for managing gym memberships. It uses
+      Pydantic for data validation and HTTP Basic Auth for staff security.
+    </p>
+
+    <h3>API Endpoints</h3>
+    <table border="1">
+      <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/register-membership</td>
+        <td>Register a new member and calculate total training fees.</td>
+      </tr>
+      <tr>
+        <td>GET</td>
+        <td>/staff-portal/members</td>
+        <td>Private archive of all gym members (Requires Staff Login).</td>
+      </tr>
+    </table>
+    <br />
+    <p>
+      View the source code here:
+      <a
+        href="https://codesandbox.io/p/github/harisks353/Gym-Membership-&-Personal-Training-API-FINAL-PROJECT"
+        >My GitHub Repo</a
+      >
+    </p>
+  </body>
+</html>
