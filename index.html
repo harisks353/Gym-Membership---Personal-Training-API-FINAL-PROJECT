@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Elite Gym API - Haris Mohammed</title>
-  </head>
-  <body>
-    <h1>Elite Gym Management System</h1>
+<head>
+    <title>Elite Gym API Docs - Haris Mohammed</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 10px; border-left: 5px solid #ccc; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Elite Gym Management API</h1>
     <p><strong>Developer:</strong> Haris Mohammed (Student ID: 70454)</p>
-    <hr />
-    <h3>Project Description</h3>
-    <p>
-      This is a FastAPI-based REST API for managing gym memberships. It uses
-      Pydantic for data validation and HTTP Basic Auth for staff security.
-    </p>
+    <hr>
+    <h2>Project Overview</h2>
+    <p>This FastAPI application manages gym registrations, calculates fees based on activity rates, and secures staff-only records using HTTP Basic Authentication.</p>
 
-    <h3>API Endpoints</h3>
-    <table border="1">
-      <tr>
-        <th>Method</th>
-        <th>Endpoint</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>POST</td>
-        <td>/register-membership</td>
-        <td>Register a new member and calculate total training fees.</td>
-      </tr>
-      <tr>
-        <td>GET</td>
-        <td>/staff-portal/members</td>
-        <td>Private archive of all gym members (Requires Staff Login).</td>
-      </tr>
+    <h2>API Endpoints</h2>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>POST</code></td>
+            <td>/register-membership</td>
+            <td>Registers a member and calculates total fees. Data is validated using Pydantic.</td>
+        </tr>
+        <tr>
+            <td><code>GET</code></td>
+            <td>/staff-portal/members</td>
+            <td>Retrieves the full list of members. <strong>Requires Staff Authentication.</strong></td>
+        </tr>
     </table>
-    <br />
-    <p>
-      View the source code here:
-      <a
-        href="https://codesandbox.io/p/github/harisks353/Gym-Membership-&-Personal-Training-API-FINAL-PROJECT"
-        >My GitHub Repo</a
-      >
-    </p>
-  </body>
+
+    <h2>Example Requests</h2>
+    <h3>Register a Member</h3>
+    <pre>
+POST /register-membership
+{
+  "full_name": "Haris Mohammed",
+  "membership_id": "GYM-70454",
+  "chosen_sessions": [
+    {
+      "activity_name": "Weight Lifting",
+      "duration_minutes": 60,
+      "hourly_rate": 25.50
+    }
+  ],
+  "has_premium_access": true
+}</pre>
+
+    <p>View the source code here: <a href="YOUR_GITHUB_LINK">My GitHub Repo</a></p>
+</body>
 </html>
